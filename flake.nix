@@ -18,6 +18,35 @@
 
     # PROGRAMS AND UTILS =======================================================
 
+    # search for files (e.g., headers) in nixpkgs
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # THEMING ==================================================================
+
+    # system-wide theming
+    nix-colors.url = "github:misterio77/nix-colors"; # palettes
+    nix-rice.url = "github:bertof/nix-rice"; # utils
+    # theming for firefox
+    firefox-native-base16.url = "github:GnRlLeclerc/firefox-native-base16";
+    # cozette built from source
+    cozette.url = "github:breitnw/cozette/dev-current";
+    # cozette with modifications for use of glyphs with terminus
+    bitmap-glyphs-12.url = "github:breitnw/bitmap-glyphs-12";
+    bitmap-glyphs-12.inputs.cozette.follows = "cozette";
+    # greybird with custom accent support
+    greybird.url = "github:breitnw/Greybird/master";
+    # temporarily convert symlinks to real files
+    hm-ricing-mode.url = "github:Markus328/hm-ricing-mode/fix-hm-module";
+    # flakified icon theme
+    buuf-icon-theme.url = "github:breitnw/buuf-gnome";
+    # niri window manager
+    niri-flake.url = "github:sodiboo/niri-flake";
+    niri-flake.inputs.nixpkgs.follows = "nixpkgs";
+    # cursor theme
+    hackneyed.url = "github:owm111/hackneyed-x11-cursors";
   };
 
   outputs = inputs: let
