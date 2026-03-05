@@ -22,8 +22,8 @@
       displays = {
         eDP-1 = {
           fingerprint = "--CONNECTED-BUT-EDID-UNAVAILABLE--eDP-1";
-          pixel-size.width = 2560;
-          pixel-size.height = 1600;
+          pixel-size.width = 3024;
+          pixel-size.height = 1890;
           scale.xorg = 2.0;
           scale.wayland = 1.5;
         };
