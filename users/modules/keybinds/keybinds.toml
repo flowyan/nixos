@@ -1,0 +1,50 @@
+# keybinds to apply across different apps
+# for example, vi keybinds are applied to vim, emacs,
+# and qutebrowser
+
+[vi]
+left           = "h"
+down           = "n"
+up             = "e"
+right          = "i"
+jump-exclusive = "t"
+jump-inclusive = "f"
+jump-next      = "."
+jump-prev      = ","
+word-next      = "w"
+word-end       = "j"
+word-back      = "b"
+insert-before  = "u"
+insert-after   = "a"
+undo           = "l"
+search         = "/"
+search-next    = "k" # search-prev is capitalized
+
+[xfce]
+# custom: correspond with commands manually defined in xfce
+# configuration
+[xfce.custom]
+find-app  = "<Super>space"
+emacs     = "<Super>e"
+calendar  = "<Super>c"
+music     = "<Super>m"
+autorandr = "<Super>r"
+agenda    = "<Super>a"
+
+# xfwm4: automatically added to xfce configuration; exo application
+# name corresponding with option name
+[xfce.exo]
+WebBrowser       = "<Super>q"
+TerminalEmulator = "<Super>t"
+FileBrowser      = "<Super>f"
+
+# xfwm4: automatically added to xfce configuration; xfwm4 command
+# name corresponding with option name
+[xfce.xfwm4]
+cycle_windows_key              = "<Super>Tab"
+cycle_reverse_windows_key      = "<Super><Shift>Tab"
+close_window_key               = "<Super>w"
+prev_workspace_key             = "<Super>Left"
+next_workspace_key             = "<Super>Right"
+move_window_prev_workspace_key = "<Super><Shift>Left"
+move_window_next_workspace_key = "<Super><Shift>Right"
