@@ -53,7 +53,7 @@
           ({...}: {
             nixpkgs.overlays = [
               overlay-unstable
-              overlay-extra
+              # overlay-extra
             ];
           })
 
@@ -85,7 +85,7 @@
           ({...}: {
             nixpkgs.overlays = [
               overlay-unstable
-              overlay-extra
+              # overlay-extra
               inputs.hackneyed.overlay
             ];
           })
