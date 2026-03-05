@@ -8,7 +8,7 @@
     modules.desktops.niri.wallpaper = lib.mkOption {
       description = "Wallpaper to use for the Niri compositor";
       type = lib.types.path;
-      default = ../../wallpapers/wallpaper.png;
+      default = ../../wallpapers/wallpaper.jpg;
     };
     modules.desktops.niri.bg-color = lib.mkOption {
       description = "Background color to use for the Niri compositor";

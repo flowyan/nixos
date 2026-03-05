@@ -137,7 +137,7 @@
 
         # TODO verify clamshell mode works
         extraConfig = ''
-          output "*" bg ${../../wallpapers/wallpaper.png} fill
+          output "*" bg ${../../wallpapers/wallpaper.jpg} fill
 
           # Volume
           bindsym XF86AudioRaiseVolume exec '${pkgs.pamixer}/bin/pamixer -i 10'
