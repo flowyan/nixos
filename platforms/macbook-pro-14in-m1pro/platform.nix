@@ -1,4 +1,4 @@
-# Apple MacBook Pro M1 (2020, 13 inch)
+# Apple MacBook Pro M1 (2021, 14 inch)
 
 {
   platform = {
