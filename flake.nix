@@ -35,10 +35,10 @@
     # A system, in my representation, is a pairing of a platform and a host.
     # See README for more information on platforms, hosts, and systems!
     systems = {
-      core = {
+      macnix = {
         platform = ./platforms/macbook-pro-14in-m1pro/platform.nix;
         hardware-config = ./platforms/macbook-pro-14in-m1pro/hardware-configuration.nix;
-        host-config = ./hosts/core.nix;
+        host-config = ./hosts/macnix.nix;
         user-config = ./users/ant-macnix.nix;
       };
     };
