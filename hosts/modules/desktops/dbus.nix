@@ -17,6 +17,6 @@
   services.tumbler.enable = true; # thumbnails for documents
 
   # xorg/xfce-specific
-  # programs.xfconf.enable = true; # for XFCE configuration
-  # services.colord.enable = true; # color management for xorg
+  programs.xfconf.enable = true; # for XFCE configuration
+  services.colord.enable = true; # color management for xorg
 }

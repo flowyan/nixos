@@ -75,6 +75,27 @@ in {
       ];
     };
 
+     # XORG =====================================================================
+
+    services.xserver = {
+      enable = cfg.xorg.enable;
+      # enable startx to start X server sessions
+      displayManager.startx.enable = cfg.xorg.enable;
+      # add XFCE to the display manager
+      desktopManager.session = lib.mkIf cfg.xorg.enable [{
+        name = "xfce";
+        prettyName = "Xfce";
+        desktopNames = [ "XFCE" ];
+        bgSupport = true;
+        start = ''
+          ${pkgs.runtimeShell} ${pkgs.xfce.xfce4-session.xinitrc} &
+          waitPID=$!
+        '';
+      }];
+      # update the DBus environment after launching the session
+      updateDbusEnvironment = cfg.xorg.enable;
+    };
+
     # Window manager only sessions (unlike DEs) don't handle XDG
     # autostart files, so force them to run the service
     services.xserver.desktopManager.runXdgAutostartIfNone = true;
