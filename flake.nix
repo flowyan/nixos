@@ -39,7 +39,7 @@
         platform = ./platforms/macbook-pro-14in-m1pro/platform.nix;
         hardware-config = ./platforms/macbook-pro-14in-m1pro/hardware-configuration.nix;
         host-config = ./hosts/core.nix;
-        user-config = ./users/breitnw-at-core.nix;
+        user-config = ./users/ant-macnix.nix;
       };
     };
   in {
@@ -76,7 +76,7 @@
 
     # generate home-manager configurations for each system
     homeConfigurations = inputs.nixpkgs.lib.mapAttrs' (system-name: cfg: {
-      name = "breitnw@${system-name}";
+      name = "ant@${system-name}";
       value = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages
           .${(import cfg.platform).platform.type};
