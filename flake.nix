@@ -60,6 +60,18 @@
       };
     };
 
+    # overlay for extra packages fetched from flakes
+    overlay-extra = final: prev:
+      with inputs; let
+        system = prev.stdenv.hostPlatform.system;
+        defaultPackage = inp: inp.packages.${system}.default;
+      in {
+        firefox-native-base16 = defaultPackage firefox-native-base16;
+        cozette = defaultPackage cozette;
+        bitmap-glyphs-12 = defaultPackage bitmap-glyphs-12;
+        greybird-with-accent = greybird.packages.${system}.greybird-with-accent;
+      };
+
     # Configuration for each system NixOS/Home Manager will be deployed to.
     # A system, in my representation, is a pairing of a platform and a host.
     # See README for more information on platforms, hosts, and systems!
@@ -82,7 +94,7 @@
           ({...}: {
             nixpkgs.overlays = [
               overlay-unstable
-              # overlay-extra
+              overlay-extra
             ];
           })
 
@@ -114,7 +126,7 @@
           ({...}: {
             nixpkgs.overlays = [
               overlay-unstable
-              # overlay-extra
+              overlay-extra
               inputs.hackneyed.overlay
             ];
           })
