@@ -51,8 +51,8 @@
           input = {
             "*" = {
               xkb_layout = "us";
-              xkb_variant = "colemak";
-              xkb_options = "caps:escape";
+              # xkb_variant = "colemak";
+              # xkb_options = "caps:escape";
             };
           };
           menu = "${pkgs.fuzzel}/bin/fuzzel";
