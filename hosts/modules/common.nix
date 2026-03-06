@@ -63,6 +63,13 @@
     settings = {PasswordAuthentication = false;};
   };
 
+  # Disable the poweroff button
+  services.logind = {
+    settings.Login = {
+      HandlePowerKey = "ignore";
+    };
+  };
+
   # Open ports in the firewall
   networking.firewall = {
     enable = true;
