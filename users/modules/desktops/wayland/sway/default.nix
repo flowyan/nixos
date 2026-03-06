@@ -41,7 +41,7 @@
           window.border = 2;
           defaultWorkspace = "workspace number 1";
           modifier = "Mod4"; # super
-          terminal = "alacritty";
+          terminal = "kitty";
           output = {
             "eDP-1" = {
               mode = "1280x800@60Hz";
@@ -69,8 +69,8 @@
             "${modifier}+q" = "exec qutebrowser";
             "${modifier}+o" = "exec emacsclient --create-frame";
             "${modifier}+t" = "exec ${cfg.terminal}";
-            "${modifier}+m" = "exec alacritty -o 'window.dimensions.columns = 70' -o 'window.dimensions.lines=22' -e rmpc";
-            "${modifier}+c" = "exec alacritty -o 'cursor.style=\"Beam\"' -e ikhal";
+            "${modifier}+m" = "exec kitty -o 'window.dimensions.columns = 70' -o 'window.dimensions.lines=22' -e rmpc";
+            "${modifier}+c" = "exec kitty -o 'cursor.style=\"Beam\"' -e ikhal";
             "${modifier}+Space" = "exec ${cfg.menu}";
 
             "${modifier}+w" = "kill";

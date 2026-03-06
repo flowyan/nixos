@@ -19,7 +19,7 @@
     enable = true;
     syntaxHighlighting.enable = true;
     # initContent = lib.mkOrder 1500 ''
-    #   if [[ $TERM == "alacritty" ]]; then
+    #   if [[ $TERM == "kitty" ]]; then
     #     fastfetch
     #   fi
     # '';
