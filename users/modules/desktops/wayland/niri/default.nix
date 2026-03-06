@@ -104,11 +104,11 @@
         prefer-no-csd = true;
 
         window-rules = [
-          # floating picture-in-picture for firefox
+          # floating picture-in-picture for brave
           {
             matches = [
               {
-                app-id = "firefox$";
+                app-id = "brave$";
                 title = "^Picture-in-Picture$";
               }
             ];
@@ -168,13 +168,13 @@
         binds = with config.lib.niri.actions; {
           # App shortcuts
           "Mod+T" = {
-            hotkey-overlay.title = "Open Alacritty";
-            action = spawn "${config.programs.alacritty.package}/bin/alacritty";
+            hotkey-overlay.title = "Open kitty";
+            action = spawn "${config.programs.kitty.package}/bin/kitty";
           };
           "Mod+C" = {
             hotkey-overlay.title = "Open Calendar";
             action =
-              spawn "${config.programs.alacritty.package}/bin/alacritty"
+              spawn "${config.programs.kitty.package}/bin/kitty"
               "-o" "'cursor.style=\"Beam\"'" "-e" "ikhal";
           };
           "Mod+O" = {
@@ -186,7 +186,7 @@
           "Mod+Q" = {
             hotkey-overlay.title = "Open Web Browser";
             action =
-              spawn "${config.programs.firefox.package}/bin/firefox"
+              spawn "${config.programs.brave.package}/bin/brave"
               "--create-frame";
           };
           "Mod+Space" = {
