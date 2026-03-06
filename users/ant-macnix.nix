@@ -34,6 +34,7 @@
       pinentry-qt # password prompt for gpg
       qbittorrent # those who download linux isos
 
+      btop
       # le coding work
       vscode
       jetbrains-toolbox
