@@ -57,6 +57,7 @@
           };
           menu = "${pkgs.fuzzel}/bin/fuzzel";
 
+	  # Make these correct so its not for colemak :v
           left = "h";
           down = "n";
           up = "e";
@@ -66,7 +67,7 @@
             cfg = config.wayland.windowManager.sway.config;
             modifier = cfg.modifier;
           in {
-            "${modifier}+q" = "exec qutebrowser";
+            "${modifier}+q" = "exec brave";
             "${modifier}+o" = "exec emacsclient --create-frame";
             "${modifier}+t" = "exec ${cfg.terminal}";
             "${modifier}+m" = "exec kitty -o 'window.dimensions.columns = 70' -o 'window.dimensions.lines=22' -e rmpc";
@@ -102,7 +103,7 @@
             "${modifier}+3" = "workspace number 3";
             "${modifier}+4" = "workspace number 4";
 
-            "${modifier}+Shift+1" = "move container to workspace number 2";
+            "${modifier}+Shift+1" = "move container to workspace number 1";
             "${modifier}+Shift+2" = "move container to workspace number 2";
             "${modifier}+Shift+3" = "move container to workspace number 3";
             "${modifier}+Shift+4" = "move container to workspace number 4";
