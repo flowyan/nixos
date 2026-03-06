@@ -36,6 +36,7 @@
     vim
     wget
     kitty
+    git
   ];
 
   ## todo: might want ladybird in the future :v
