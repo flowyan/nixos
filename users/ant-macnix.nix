@@ -69,10 +69,10 @@
 
   # custom modules
   modules.kitty.enable = true;
-  modules.mail.enable = true;
-  modules.firefox.enable = true;
-  modules.rclone.enable = true;
-  modules.music.enable = false;
+  modules.brave.enable = true;
+  # modules.mail.enable = true;
+  # modules.rclone.enable = true;
+  # modules.music.enable = false;
 
   # desktop environments (see desktops/default.nix)
   modules.desktops = {
