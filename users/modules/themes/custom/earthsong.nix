@@ -23,5 +23,5 @@
       base0F = "#64201a";
     };
   };
-  modules.fastfetch.image = ../../programs/fastfetch/images/9.jpg;
+  modules.fastfetch.image = ../../programs/fastfetch/images/1.jpg;
 }

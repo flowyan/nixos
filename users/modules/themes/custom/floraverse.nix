@@ -23,6 +23,6 @@
       base0F = "#320016";
     };
   };
-  modules.fastfetch.image = ../../programs/fastfetch/images/15.jpg;
+  modules.fastfetch.image = ../../programs/fastfetch/images/1.jpg;
   modules.desktops.niri.wallpaper = ../../desktops/wallpapers/wallpaper.jpg;
 }

@@ -40,8 +40,8 @@
     xdg.mimeApps.enable = true;
 
     home.sessionVariables = {
-      # config directory for nh
-      NH_FLAKE = "${config.home.homeDirectory}/Config/nixos";
+      # config directory for nh — points to GitHub so no manual git pull needed
+      NH_FLAKE = "github:yourusername/nixos";
       # default graphical and TUI editor
       VISUAL = "${config.programs.neovim.package}/bin/neovim";
       # EDITOR = "${config.programs.neovim.package}/bin.neovim -nw";
