@@ -34,8 +34,6 @@
       pinentry-qt # password prompt for gpg
       qbittorrent # those who download linux isos
 
-      aseprite # sprite editor
-
        # strictly system dependent things...
       # (lib.mkIf (system == "x86_64-linux") slack) # slack suuuuucks, but useful if i need any strictly x86 stuff!
       (lib.mkIf (system == "x86_64-linux") plexamp) # i loove my plexamp, but damn x86 only!
