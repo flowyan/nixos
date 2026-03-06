@@ -25,10 +25,10 @@
         systemd.enable = true;
         config = {
           startup = [
-            # {
-            #   command = "${pkgs.waybar}/bin/waybar";
-            #   always = true;
-            # }
+            {
+              command = "${pkgs.waybar}/bin/waybar";
+              always = true;
+            }
             {
               command = "${pkgs.mako}/bin/mako --default-timeout 5000";
               always = true;
@@ -44,7 +44,7 @@
           terminal = "kitty";
           output = {
             "eDP-1" = {
-              mode = "1280x800@60Hz";
+              mode = "3024x1890@120Hz";
             };
           };
           focus.followMouse = false;
