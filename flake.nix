@@ -47,6 +47,12 @@
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
     # cursor theme
     hackneyed.url = "github:owm111/hackneyed-x11-cursors";
+
+    # NON-FLAKE ================================================================
+    nix-mustache = {
+      url = "github:valodzka/nix-mustache";
+      flake = false;
+    };
   };
 
   outputs = inputs: let
