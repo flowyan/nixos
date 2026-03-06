@@ -24,7 +24,7 @@
       base0F = "#955f5f"; # red
     };
   };
-  modules.doom.theme = "doom-flatwhite";
+  # modules.doom.theme = "doom-flatwhite";
   # TODO this doesn't work
   programs.emacs.extraConfig = "(setq global-hl-line-mode nil)";
 }

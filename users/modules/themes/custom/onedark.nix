@@ -1,4 +1,4 @@
 {...}: {
   # set emacs theme
-  modules.doom.theme = "doom-one";
+  # modules.doom.theme = "doom-one";
 }

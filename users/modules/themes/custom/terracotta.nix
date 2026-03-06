@@ -24,6 +24,6 @@
     };
   };
 
-  modules.de.xfconf.panelBackgroundColor = [0.0 0.0 0.0 1.0];
-  modules.de.xfconf.desktopTextColor = "original";
+  # modules.de.xfconf.panelBackgroundColor = [0.0 0.0 0.0 1.0];
+  # modules.de.xfconf.desktopTextColor = "original";
 }

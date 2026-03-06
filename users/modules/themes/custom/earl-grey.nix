@@ -25,5 +25,5 @@
     };
   };
 
-  modules.doom.theme = "doom-earl-grey";
+  # modules.doom.theme = "doom-earl-grey";
 }

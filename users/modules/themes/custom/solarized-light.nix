@@ -24,5 +24,5 @@
     };
   };
   # set emacs theme
-  modules.doom.theme = "doom-solarized-light";
+  # modules.doom.theme = "doom-solarized-light";
 }
