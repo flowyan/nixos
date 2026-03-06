@@ -102,8 +102,11 @@ in {
 
     # WAYLAND ==================================================================
 
+    # enable sway system-wide (PAM, polkit, etc.)
+    programs.sway.enable = cfg.wayland.enable;
+
     # make sessions visible in display manager
-    services.displayManager.sessionPackages = with pkgs;
-      lib.mkIf cfg.wayland.enable [ niri sway ];
+    services.displayManager.sessionPackages =
+      lib.optionals cfg.wayland.enable [ pkgs.niri pkgs.sway ];
   };
 }
