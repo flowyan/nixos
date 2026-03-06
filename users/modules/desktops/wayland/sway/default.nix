@@ -45,6 +45,7 @@
           output = {
             "eDP-1" = {
               mode = "3024x1890@120Hz";
+              scale = "1.5";
             };
           };
           focus.followMouse = false;
@@ -57,7 +58,7 @@
           };
           menu = "${pkgs.fuzzel}/bin/fuzzel";
 
-	  # Make these correct so its not for colemak :v
+          # Make these correct so its not for colemak :v
           left = "h";
           down = "n";
           up = "e";
@@ -149,6 +150,12 @@
           # Brightness
           bindsym XF86MonBrightnessDown exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-
           bindsym XF86MonBrightnessUp exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%+
+
+          # Keyboard Backlight
+          bindsym ${config.wayland.windowManager.sway.config.modifier}+XF86MonBrightnessDown exec ${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' set 10%-
+          bindsym ${config.wayland.windowManager.sway.config.modifier}+XF86MonBrightnessUp exec ${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' set 10%+
+
+          bindsym XF86PowerOff exec ${pkgs.wlogout}/bin/wlogout
 
           # Clamshell mode
           set $laptop eDP-1
