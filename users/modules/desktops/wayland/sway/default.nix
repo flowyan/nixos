@@ -22,6 +22,7 @@
     lib.mkIf config.modules.desktops.wayland.enable {
       wayland.windowManager.sway = {
         enable = true;
+        systemd.enable = true;
         config = {
           startup = [
             # {
