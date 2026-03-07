@@ -24,8 +24,8 @@
       enable = true;
       settings = {
         logo = {
-          source = lib.mkDefault (crop "9:16" config.modules.fastfetch.image); # so that we can customize per-theme
-          type = "sixel";
+          source = lib.mkDefault (crop "1:1" config.modules.fastfetch.image); # so that we can customize per-theme
+          type = "kitty";
           height = 14;
           padding = {
             right = 1;
