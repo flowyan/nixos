@@ -101,6 +101,7 @@
             nixpkgs.overlays = [
               overlay-unstable
               overlay-extra
+              inputs.hackneyed.overlay
             ];
           })
 
