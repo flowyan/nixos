@@ -32,22 +32,35 @@ in {
     # passing the wrapper directly.
 
     # For now, use lightdm (gtk greeter) as the display manager
-    services.xserver.displayManager.lightdm = {
+    #services.xserver.displayManager.lightdm = {
+    #  enable = true;
+    #  greeters.gtk = {
+    #    enable = true;
+    #  };
+    #};
+
+    services.displayManager.sddm = {
       enable = true;
-      greeters.gtk = {
+      wayland = {
         enable = true;
+        compositor = "kwin";
+      };
+      settings = {
+        # kwin doesn't pick up cursor theme from [Theme] in Wayland mode;
+        # must be set via the greeter environment instead
+        Theme.CursorTheme = "Hackneyed-Dark";
+        General.GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell,XCURSOR_THEME=Hackneyed-Dark,XCURSOR_SIZE=24";
       };
     };
-
-    # services.displayManager.lemurs = {
-    #   enable = true;
-    # };
 
     # ALL DESKTOPS =============================================================
 
     security.polkit.enable = true;
     programs.dconf.enable = true;
-    environment.systemPackages = [ pkgs.polkit_gnome ]; # gui for interactive authentication
+    environment.systemPackages = [
+      pkgs.polkit_gnome # gui for interactive authentication
+      pkgs.hackneyed-x11-cursors # cursor theme for sddm
+    ];
 
     # from https://discourse.nixos.org/t/xdg-desktop-portal-gtk-desktop-collision/35063
     # xdg desktop portals expose d-bus interfaces for xdg file access
