@@ -33,8 +33,8 @@
       vesktop # discord client, might switch to equibop
       pinentry-qt # password prompt for gpg
       qbittorrent # those who download linux isos
+      shotman # screenshot tool
 
-      btop
       # le coding work
       vscode
       jetbrains-toolbox
@@ -56,6 +56,7 @@
       fzf
       ffmpeg
       yt-dlp
+      btop
 
       # languages and tools...
       nh # nix helper
@@ -105,7 +106,7 @@
     # themeName = "mountain"; #              ⋆ dark and moody
     # themeName = "spacemacs"; #             ⋆ inoffensively dark and vibrant
     # themeName = "darktooth"; #             ⋆ gruvbox but more purply
-    # themeName = "treehouse"; #             ⋆ summercamp, darker and purpler
+    themeName = "treehouse"; #             ⋆ summercamp, darker and purpler
     # themeName = "elemental"; #             ⋆ earthy and muted
     # themeName = "earthsong"; #               elemental but a little less muted
     # themeName = "everforest"; #              greenish and groovy
@@ -118,7 +119,7 @@
     # themeName = "tokyo-night-storm"; #        blue and purple
     # themeName = "gruvbox-dark-medium"; #   ⋆ a classic
     # themeName = "catppuccin-macchiato"; #    purple pastel
-    themeName = "floraverse";
+    # themeName = "floraverse";
 
     # light themes
     # themeName = "dirtysea"; #                greeeen and gray
