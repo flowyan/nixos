@@ -25,10 +25,10 @@
         systemd.enable = true;
         config = {
           startup = [
-            {
-              command = "${pkgs.waybar}/bin/waybar";
-              always = true;
-            }
+            # {
+            #   command = "${pkgs.waybar}/bin/waybar";
+            #   always = true;
+            # }
             {
               command = "${pkgs.mako}/bin/mako --default-timeout 5000";
               always = true;
@@ -37,6 +37,7 @@
           gaps = {
             inner = 10;
             outer = 5;
+            smartGaps = true;
           };
           window.border = 2;
           defaultWorkspace = "workspace number 1";
@@ -143,17 +144,17 @@
           output "*" bg ${../../wallpapers/wallpaper.jpg} fill
 
           # Volume
-          bindsym XF86AudioRaiseVolume exec '${pkgs.pamixer}/bin/pamixer -i 10'
-          bindsym XF86AudioLowerVolume exec '${pkgs.pamixer}/bin/pamixer -d 10'
+          bindsym XF86AudioRaiseVolume exec '${pkgs.pamixer}/bin/pamixer -i 5'
+          bindsym XF86AudioLowerVolume exec '${pkgs.pamixer}/bin/pamixer -d 5'
           bindsym XF86AudioMute exec '${pkgs.pamixer}/bin/pamixer -t'
 
           # Brightness
-          bindsym XF86MonBrightnessDown exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-
-          bindsym XF86MonBrightnessUp exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%+
+          bindsym XF86MonBrightnessDown exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-
+          bindsym XF86MonBrightnessUp exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+
 
           # Keyboard Backlight
-          bindsym ${config.wayland.windowManager.sway.config.modifier}+XF86MonBrightnessDown exec ${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' set 10%-
-          bindsym ${config.wayland.windowManager.sway.config.modifier}+XF86MonBrightnessUp exec ${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' set 10%+
+          bindsym ${config.wayland.windowManager.sway.config.modifier}+XF86MonBrightnessDown exec ${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' set 5%-
+          bindsym ${config.wayland.windowManager.sway.config.modifier}+XF86MonBrightnessUp exec ${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' set 5%+
 
           bindsym XF86PowerOff exec ${pkgs.wlogout}/bin/wlogout
 
