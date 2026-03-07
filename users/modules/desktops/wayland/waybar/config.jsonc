@@ -6,6 +6,13 @@
         "on-scroll-up": "brightnessctl set +5%",
         "tooltip-format": "{percent}%"
     },
+    "kbdbacklight": {
+        "device": "kbd_backlight",
+        "format": "{percent}% kbd",
+        "on-scroll-down": "brightnessctl --device='kbd_backlight' set 5%-",
+        "on-scroll-up": "brightnessctl --device='kbd_backlight' set +5%",
+        "tooltip-format": "{percent}%"
+    },
     "battery": {
         "events": {
             "on-charging": "@notify-send-bin@ -u normal 'Battery charging'",
@@ -65,8 +72,8 @@
         },
         "modules": [
             "custom/arrow-left",
-            "battery",
             "backlight",
+            "kbdbacklight",
             "wireplumber#sink",
             "wireplumber#source",
         ],
@@ -89,6 +96,7 @@
     "modules-right": [
         "group/info",
         "tray",
+        "battery",
         "clock",
     ],
     "position": "top",
