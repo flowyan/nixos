@@ -9,11 +9,15 @@
   modules.desktops.xorg.enable = true;
   modules.desktops.wayland.enable = true;
 
+  # zsh must be enabled at the system level to be a valid login shell
+  programs.zsh.enable = true;
+
   # Configure users
   users.mutableUsers = false;
   users.users.ant = {
     hashedPassword = "$y$j9T$hnHLdn2h1cwef4KSAxRNZ/$z8xGgxx6O8F6m/vyfN4RiCv8U4Q8LAqIJF0FD0JTviB";
     isNormalUser = true;
+    shell = pkgs.zsh;
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user.
       "networkmanager" # Allow the user to access the network manager
@@ -35,7 +39,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    kitty
     git
   ];
 
@@ -51,6 +54,11 @@
   # enable x86 emulation if we're on an aarch64 system
   boot.binfmt.emulatedSystems = lib.mkIf
     (config.platform.type == "aarch64-linux") ["x86_64-linux"];
+
+  # For ` to < and ~ to > (for those with US keyboards)
+  boot.extraModprobeConfig = ''
+    options hid_apple iso_layout=0
+  '';
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
