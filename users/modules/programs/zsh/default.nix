@@ -30,6 +30,10 @@
     ];
     shellAliases = {
       open = "xdg-open";
+      cls = "clear";
+      clr = "clear";
+      bat-limit = "echo 80 | sudo tee /sys/class/power_supply/macsmc-battery/charge_control_end_threshold";
+      bat-full = "echo 100 | sudo tee /sys/class/power_supply/macsmc-battery/charge_control_end_threshold";
     };
     oh-my-zsh = {
       enable = true;
