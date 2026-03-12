@@ -39,9 +39,9 @@ in {
       gtk.enable = true;
       sway.enable = true;
       x11.enable = true;
-      name = "Hackneyed-Dark";
-      package = pkgs.hackneyed-x11-cursors;
-      size = 24;
+      name = "Posy_Cursor_Black";
+      package = pkgs.posy-cursors;
+      size = 32;
     };
     gtk = {
       enable = true;
