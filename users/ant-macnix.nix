@@ -34,12 +34,21 @@
       pinentry-qt # password prompt for gpg
       qbittorrent # those who download linux isos
       shotman # screenshot tool
+      feishin # navidrome client
+      wdisplays # to position displays etc
 
       # le coding work
       vscode
       jetbrains-toolbox
       bun
-      nodejs_20
+      nodejs
+      python314Packages.python
+      cairo
+      pango
+      libjpeg
+      giflib
+      libsvgtiny
+      biome
 
        # strictly system dependent things...
       # (lib.mkIf (system == "x86_64-linux") slack) # slack suuuuucks, but useful if i need any strictly x86 stuff!
@@ -58,10 +67,13 @@
       yt-dlp
       btop
 
+      flyway
+
       # languages and tools...
       nh # nix helper
       nixd # nix language server
       alejandra # nix formatter
+      nixfmt # formatter
 
       # FONTS AND OTHER =============================
       etBook
@@ -106,10 +118,10 @@
     # themeName = "mountain"; #              ⋆ dark and moody
     # themeName = "spacemacs"; #             ⋆ inoffensively dark and vibrant
     # themeName = "darktooth"; #             ⋆ gruvbox but more purply
-    themeName = "treehouse"; #             ⋆ summercamp, darker and purpler
+    # themeName = "treehouse"; #             ⋆ summercamp, darker and purpler
     # themeName = "elemental"; #             ⋆ earthy and muted
     # themeName = "earthsong"; #               elemental but a little less muted
-    # themeName = "everforest"; #              greenish and groovy
+    themeName = "everforest"; #              greenish and groovy
     # themeName = "summercamp"; #            ⋆ earthy but vibrant
     # themeName = "ic-green-ppl"; #            i see green people? who knows
     # themeName = "horizon-dark"; #            vaporwavey
