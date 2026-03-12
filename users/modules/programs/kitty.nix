@@ -74,6 +74,10 @@ in {
         allow_remote_control = "yes";
       };
       shellIntegration.enableZshIntegration = true;
+      keybindings = {
+        "ctrl+c" = "copy_and_clear_or_interrupt";
+        "ctrl+v" = "paste_from_clipboard";
+      };
       extraConfig = config.utils.mustache.eval-base16 base16-kitty-template;
     };
   };
