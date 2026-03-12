@@ -26,6 +26,7 @@
     home.packages = with pkgs;
       lib.mkIf config.modules.desktops.wayland.enable [
         xwayland-satellite
+        playerctl
       ];
 
     # niri config
@@ -35,7 +36,7 @@
       package = pkgs.niri;
       settings = {
         input.touchpad = {
-          natural-scroll = false;
+          natural-scroll = true;
           tap = false;
         };
         # TODO map over all displays
@@ -214,6 +215,22 @@
           "XF86AudioMicMute" = {
             allow-when-locked = true;
             action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
+          };
+          "XF86AudioPlay" = {
+            allow-when-locked = true;
+            action = spawn "${pkgs.playerctl}/bin/playerctl" "play-pause";
+          };
+          "XF86AudioPause" = {
+            allow-when-locked = true;
+            action = spawn "${pkgs.playerctl}/bin/playerctl" "play-pause";
+          };
+          "XF86AudioNext" = {
+            allow-when-locked = true;
+            action = spawn "${pkgs.playerctl}/bin/playerctl" "next";
+          };
+          "XF86AudioPrev" = {
+            allow-when-locked = true;
+            action = spawn "${pkgs.playerctl}/bin/playerctl" "previous";
           };
 
           # Brightness keys
