@@ -48,9 +48,15 @@ in {
       settings = {
         # kwin doesn't pick up cursor theme from [Theme] in Wayland mode;
         # must be set via the greeter environment instead
-        Theme.CursorTheme = "Hackneyed-Dark";
-        General.GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell,XCURSOR_THEME=Hackneyed-Dark,XCURSOR_SIZE=24";
+        Theme.CursorTheme = "Posy_Cursor_Black";
+        General.GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell,XCURSOR_THEME=Posy_Cursor_Black,XCURSOR_SIZE=24";
       };
+    };
+
+    # Restart SDDM after logout so the greeter comes back
+    systemd.services.sddm.serviceConfig = {
+      Restart = "always";
+      RestartSec = 1;
     };
 
     # ALL DESKTOPS =============================================================
@@ -59,7 +65,7 @@ in {
     programs.dconf.enable = true;
     environment.systemPackages = [
       pkgs.polkit_gnome # gui for interactive authentication
-      pkgs.hackneyed-x11-cursors # cursor theme for sddm
+      pkgs.posy-cursors # cursor theme for sddm
     ];
 
     # from https://discourse.nixos.org/t/xdg-desktop-portal-gtk-desktop-collision/35063
