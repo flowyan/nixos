@@ -25,7 +25,16 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16 * 1024; # 16GB in MiB
+  }];
+
+  # zram: compressed in-memory swap, reduces pressure on the swapfile
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+  };
 
   networking.useDHCP = lib.mkDefault true;
 
