@@ -74,16 +74,16 @@ in {
 
       wayland = {
         primary = {
-          family = "ProggyVector";
+          family = "Inter";
           weight = "Regular";
-          size = 9; # points
-          package = pkgs.callPackage ./proggyvector.nix {};
+          size = 10; # points
+          package = pkgs.inter;
         };
         secondary = {
-          family = "creep";
-          weight = "Bold";
-          size = 12;
-          package = pkgs.creep;
+          family = "Inter";
+          weight = "Regular";
+          size = 10;
+          package = pkgs.inter;
         };
         monospace = {
           family = "ProggyVector";
@@ -119,6 +119,7 @@ in {
       cfg.active.secondary.package
       cfg.active.monospace.package
       cfg.active.symbols.package
+      pkgs.noto-fonts
     ];
   };
 }
