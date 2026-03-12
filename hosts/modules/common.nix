@@ -17,6 +17,15 @@
     # ./services
   ];
 
+  config = {
+
+  nixpkgs = {
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = _: true;
+      };
+    };
+
   # location service
   location.provider = "geoclue2";
   services.geoclue2.enable = true;
@@ -42,6 +51,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
 
   nix = {
     # Enable flakes
@@ -74,5 +88,10 @@
   networking.firewall = {
     enable = true;
     # allowedTCPPorts = [57110];
+  };
+
+  networking.hosts = {
+    "127.0.0.1" = [ "postgres" ];
+  };
   };
 }
