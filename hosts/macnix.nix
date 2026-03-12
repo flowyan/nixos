@@ -12,6 +12,14 @@
   # zsh must be enabled at the system level to be a valid login shell
   programs.zsh.enable = true;
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+    ];
+  };
+
   # Configure users
   users.mutableUsers = false;
   users.users.ant = {
@@ -49,15 +57,28 @@
   # required udev rules for platformio
   services.udev.packages = [pkgs.platformio-core.udev pkgs.openocd];
 
+  # Allow ant to set battery charge threshold without a password prompt
+  security.sudo.extraRules = [
+    {
+      users = [ "ant" ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/tee /sys/class/power_supply/macsmc-battery/charge_control_end_threshold";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
   # virtualization
   virtualisation.docker.enable = true;
   # enable x86 emulation if we're on an aarch64 system
   boot.binfmt.emulatedSystems = lib.mkIf
     (config.platform.type == "aarch64-linux") ["x86_64-linux"];
 
-  # For ` to < and ~ to > (for those with US keyboards)
+  # hid_apple: configure the Apple SPI keyboard driver to match macOS behaviour
   boot.extraModprobeConfig = ''
-    options hid_apple iso_layout=0
+    options hid_apple fnmode=3 iso_layout=-1 swap_ctrl_cmd=1 swap_fn_leftctrl=0 swap_opt_cmd=0
   '';
 
   # Copy the NixOS configuration file and link it from the resulting system
