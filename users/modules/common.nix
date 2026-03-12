@@ -33,6 +33,9 @@
     # enable home-manager (needs bootstrap)
     programs.home-manager.enable = true;
 
+    # ricing mode utility (hmrice)
+    programs.hm-ricing-mode.enable = true;
+
     # reload systemd units on home-manager switch
     systemd.user.startServices = "sd-switch";
 
