@@ -45,8 +45,6 @@
     # niri window manager
     niri-flake.url = "github:sodiboo/niri-flake";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
-    # cursor theme
-    hackneyed.url = "github:owm111/hackneyed-x11-cursors";
 
     # NON-FLAKE ================================================================
     nix-mustache = {
@@ -101,7 +99,6 @@
             nixpkgs.overlays = [
               overlay-unstable
               overlay-extra
-              inputs.hackneyed.overlay
             ];
           })
 
@@ -134,7 +131,6 @@
             nixpkgs.overlays = [
               overlay-unstable
               overlay-extra
-              inputs.hackneyed.overlay
             ];
           })
 
